@@ -19,7 +19,7 @@ let package = Package(
 	targets: [
 		.target(
 			name: "ReCaptcha",
-			dependencies: [], path: "ReCapcha/Classes"),
+			dependencies: [], path: "ReCaptcha/Classes"),
 		.testTarget(
 			name: "ReCaptchaTests",
 			dependencies: ["ReCaptcha"]),
