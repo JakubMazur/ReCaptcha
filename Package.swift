@@ -14,15 +14,24 @@ let package = Package(
 			targets: ["ReCaptcha"]),
 	],
 	dependencies: [
-		 .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.0.0"),
+		 .package(url: "https://github.com/JakubMazur/AppSwizzle.git", from: "1.3.2"),
 	],
 	targets: [
 		.target(
 			name: "ReCaptcha",
-			dependencies: [], path: "ReCaptcha/Classes"),
+			path: "ReCaptcha/Classes",
+			linkerSettings: [
+				.linkedFramework("UIKit")
+			]
+		),
 		.testTarget(
-			name: "ReCaptchaTests",
-			dependencies: ["ReCaptcha"]),
+			name: "ReCaptcha_Tests",
+			dependencies: ["ReCaptcha", "AppSwizzle"],
+			path: "Example/ReCaptcha_Tests",
+			exclude: ["Info.plist"],
+			resources: [
+				.copy("mock.html")
+			])
 	]
 )
 

@@ -6,6 +6,8 @@
 //  Copyright © 2018 ReCaptcha. All rights reserved.
 //
 
+#if canImport(RxSwift)
+
 import RxSwift
 import UIKit
 
@@ -82,3 +84,5 @@ public extension Reactive where Base: ReCaptcha {
         }
     }
 }
+
+#endif
