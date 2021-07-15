@@ -23,6 +23,7 @@ let package = Package(
 	targets: [
 		.target(
 			name: "ReCaptcha",
+			dependencies: [],
 			path: "ReCaptcha/Classes",
 			exclude: ["Rx"],
 			linkerSettings: [
@@ -31,7 +32,10 @@ let package = Package(
 		),
 		.target(
 			name: "ReCaptchaRx",
-			dependencies: ["RxSwift", "ReCaptcha"],
+			dependencies: [
+				"ReCaptcha",
+				.product(name: "RxSwift", package: "RxSwift")
+			],
 			path: "ReCaptcha/Classes/Rx",
 			linkerSettings: [
 				.linkedFramework("UIKit")
