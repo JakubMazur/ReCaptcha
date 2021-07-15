@@ -13,8 +13,8 @@ let package = Package(
 			name: "ReCaptcha",
 			targets: ["ReCaptcha"]),
 		.library(
-			name: "ReCaptcha+Rx",
-			targets: ["ReCaptcha+Rx"])
+			name: "ReCaptchaRx",
+			targets: ["ReCaptchaRx"])
 	],
 	dependencies: [
 		.package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.0.0"),
@@ -30,7 +30,7 @@ let package = Package(
 			]
 		),
 		.target(
-			name: "ReCaptcha+Rx",
+			name: "ReCaptchaRx",
 			dependencies: ["RxSwift", "ReCaptcha"],
 			path: "ReCaptcha/Classes/Rx",
 			linkerSettings: [
