@@ -33,8 +33,7 @@ let package = Package(
 		.target(
 			name: "ReCaptchaRx",
 			dependencies: [
-				"ReCaptcha",
-				.product(name: "RxSwift", package: "RxSwift")
+				"ReCaptcha", "RxSwift"
 			],
 			path: "ReCaptcha/Classes/Rx",
 			linkerSettings: [
